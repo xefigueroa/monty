@@ -1,6 +1,18 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+/* LIST OF LIBRARIES BELOW */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <fcntl.h>
+
+/* DOUBLE LINKED LIST STRUCT BELOW */
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -12,10 +24,12 @@
  */
 typedef struct stack_s
 {
-		int n;
-		struct stack_s *prev;
-		struct stack_s *next;
+        int n;
+        struct stack_s *prev;
+        struct stack_s *next;
 } stack_t;
+
+/* FUNCTION POINTER STRUCT BELOW */
 
 /**
  * struct instruction_s - opcode and its function
@@ -27,8 +41,18 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-		char *opcode;
-		void (*f)(stack_t **stack, unsigned int line_number);
+        char *opcode;
+        void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-#endif
+/* DOUBLE LINKED LIST FUNCTIONS BELOW */
+
+stack_t *addnode(stack_t **head, const int n);
+size_t printNode(const stack_t *h);
+void freeList(stack_t *head);
+
+/* AUX FUNCTIONS BELOW */
+
+int _push(char *str);
+
+#endif /* MONTY_H */
