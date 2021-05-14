@@ -136,4 +136,4 @@ void _mod(stack_t **head, unsigned int line)
 	(*head)->prev = NULL;
 	free(temp2);
 }
-"
+

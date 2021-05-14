@@ -15,7 +15,7 @@ int _isanum(char *str, int line)
 	{
 		if (str[index] < '0' || str[index] > '9')
 		{
-			printf("L<%D>: usage: push integer\n", line);
+			printf("L<%d>: usage: push integer\n", line);
 			exit(EXIT_FAILURE);
 		}
 	}
