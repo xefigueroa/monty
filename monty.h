@@ -47,12 +47,23 @@ typedef struct instruction_s
 
 /* DOUBLE LINKED LIST FUNCTIONS BELOW */
 
+stack_t *addEndNode(stack_t **head, const int n);
 stack_t *addnode(stack_t **head, const int n);
 size_t printNode(const stack_t *h);
 void freeList(stack_t *head);
 
 /* AUX FUNCTIONS BELOW */
 
-int _push(char *str);
+int _isanum(char *str, int line);
+void _pall(stack_t **head, unsigned int line);
+void _pint(stack_t **head, unsigned int line);
+void _nop(stack_t **head, unsigned int line);
+void _pop(stack_t **head, unsigned int line);
+void _swap(stack_t **head, unsigned int line);
+void _add(stack_t **head, unsigned int line);
+
+/* GET OP FUNCTIONS BELOW */
+
+void (*opfunc(char *token))(stack_t **head, unsigned int line);
 
 #endif /* MONTY_H */
