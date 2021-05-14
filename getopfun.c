@@ -2,7 +2,7 @@
 
 /**
  *opfunc - will get the function to do the operation that we need
- *@s: will compare the operators
+ *@token: token
  *Return: the pointer to a function
  */
 
