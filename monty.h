@@ -10,6 +10,7 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <ctype.h>
 
 /* DOUBLE LINKED LIST STRUCT BELOW */
 
@@ -54,7 +55,7 @@ void freeList(stack_t *head);
 
 /* AUX FUNCTIONS BELOW */
 
-int _isanum(char *str, int line);
+int _isanum(char *hola, int line);
 void _pall(stack_t **head, unsigned int line);
 void _pint(stack_t **head, unsigned int line);
 void _nop(stack_t **head, unsigned int line);
@@ -65,7 +66,8 @@ void _sub(stack_t **head, unsigned int line);
 void _div(stack_t **head, unsigned int line);
 void _mul(stack_t **head, unsigned int line);
 void _mod(stack_t **head, unsigned int line);
-void checkbuffer(FILE *fd, char *buffer, ssize_t _read);
+/*void checkbuffer(FILE *fd, char *buffer, ssize_t _read);*/
+void checkbuffer(FILE *fd, char *buffer);
 
 /* GET OP FUNCTIONS BELOW */
 

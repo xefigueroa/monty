@@ -10,8 +10,7 @@
 int main(int argc, char *argv[])
 {
 	FILE *fd;
-	ssize_t _read;
-	size_t getSize = 1024;
+	/*ssize_t _read;*/
 	char *buffer;
 	stack_t *head = NULL;
 
@@ -34,14 +33,18 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	_read = getline(&buffer, &getSize, fd);
-	if (_read == -1)
-	{
-		free(buffer);
-		fclose(fd);
-		exit(EXIT_FAILURE);
-	}
-	checkbuffer(fd, buffer, _read);
+	/*
+	 *_read = getline(&buffer, &getSize, fd);
+	 *if (_read == -1)
+	 *{
+	 *	free(buffer);
+	 *	fclose(fd);
+	 *	exit(EXIT_FAILURE);
+	 *}
+	 */
+
+	/*checkbuffer(fd, buffer, _read);*/
+	checkbuffer(fd, buffer);
 	freeList(head);
 	free(buffer);
 	fclose(fd);

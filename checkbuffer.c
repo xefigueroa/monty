@@ -4,26 +4,29 @@
  * checkbuffer - Will check buffer line by line
  * @fd: file descriptor
  * @buffer: buffer
- * @_read: file lines read
  */
 
-void checkbuffer(FILE *fd, char *buffer, ssize_t _read)
+/*void checkbuffer(FILE *fd, char *buffer, ssize_t _read)*/
+void checkbuffer(FILE *fd, char *buffer)
 {
-	char *delim = " \n", *token = NULL;
+	char *delim = "\n\t ,.", *token = NULL;
 	stack_t *head = NULL;
 	int line = 1;
 	size_t getSize = 1024;
 
-	while (_read != EOF)
+	while ((getline(&buffer, &getSize, fd)) != EOF)
 	{
 		token = strtok(buffer, delim);
+		if (token == NULL)
+		{
+			continue;
+		}
 		if (strcmp(token, "push") == 0)
 		{
 			token = strtok(NULL, delim);
 			_isanum(token, line);
-			/*addEndNode(&head, atoi(token));*/
 			addnode(&head, atoi(token));
-			line++;
+			/*addEndNode(&head, atoi(token));*/
 		}
 		else
 		{
@@ -39,7 +42,6 @@ void checkbuffer(FILE *fd, char *buffer, ssize_t _read)
 			}
 			line++;
 		}
-		_read = getline(&buffer, &getSize, fd);
 	}
 
 }

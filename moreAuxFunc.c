@@ -2,23 +2,51 @@
 
 /**
  * _isanum - will verify if the character is a integer or not
- * @str: is the token to verify
+ * @token: is the token to verify
  * @line: line number
  * Return: will return 1 if fails or 0 if not
  */
 
-int _isanum(char *str, int line)
+int _isanum(char *token, int line)
 {
 	int index;
+	(void)line;
 
-	for (index = 0; str[index] != '\0'; index++)
+	/*
+	 *for (index = 0; token[index] != '\0'; index++)
+	 *{
+	 *	if (token[index] < '0' || token[index] > '9')
+	 *	{
+	 *		printf("L<%d>: usage: push integer\n", line);
+	 *		exit(EXIT_FAILURE);
+	 *	}
+	 *	}
+	 */
+
+	if (token == NULL)
 	{
-		if (str[index] < '0' || str[index] > '9')
+		printf("L%d: usage: push integer\n", line);
+		exit(EXIT_FAILURE);
+	}
+
+	for (index = 0; token[index] != '\0'; index++)
+	{
+		if (token[index] == '-')
 		{
-			printf("L<%d>: usage: push integer\n", line);
+			if (isdigit(token[index + 1]) == 1)
+			{
+				return (0);
+			}
+		}
+		else if (isdigit(token[index]) == 1)
+		{
+			return (0);
+		}
+		else if (token[index] < '0' || token[index] > '9')
+		{
+			printf("L%d: usage: push integer\n", line);
 			exit(EXIT_FAILURE);
 		}
 	}
 	return (0);
 }
-
