@@ -66,6 +66,7 @@ void _sub(stack_t **head, unsigned int line);
 void _div(stack_t **head, unsigned int line);
 void _mul(stack_t **head, unsigned int line);
 void _mod(stack_t **head, unsigned int line);
+void _pchar(stack_t **head, unsigned int line);
 /*void checkbuffer(FILE *fd, char *buffer, ssize_t _read);*/
 void checkbuffer(FILE *fd, char *buffer);
 

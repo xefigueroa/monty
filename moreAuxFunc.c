@@ -38,3 +38,29 @@ int _isanum(char *token, int line)
 	}
 	return (0);
 }
+
+/**
+ *_pint - will print the value at the top of the stack
+ *@head: is the pointer to the first node
+ *@line: number of the line
+ */
+
+void _pchar(stack_t **head, unsigned int line)
+{
+        if (*head == NULL || head == NULL)
+        {
+                fprintf(stderr, "L%d: can't pchar, stack empty\n", line);
+                exit(EXIT_FAILURE);
+        }
+
+	if (((*head)->n) >= 0 && ((*head)->n) <= 127)
+	{
+		printf("%d\n", (*head)->n);
+	}
+
+	else
+	{
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line);
+		exit(EXIT_FAILURE);
+	}
+}
