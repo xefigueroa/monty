@@ -40,27 +40,22 @@ int _isanum(char *token, int line)
 }
 
 /**
- *_pint - will print the value at the top of the stack
+ *_pchar - will print the value at the top of the stack as ascii character
  *@head: is the pointer to the first node
  *@line: number of the line
  */
 
 void _pchar(stack_t **head, unsigned int line)
 {
-	int temp;
-
-        if (*head == NULL || head == NULL)
-        {
-                fprintf(stderr, "L%d: can't pchar, stack empty\n", line);
-                exit(EXIT_FAILURE);
-        }
-
+	if (*head == NULL || head == NULL)
+	{
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line);
+		exit(EXIT_FAILURE);
+	}
 	if (((*head)->n) >= 0 && ((*head)->n) <= 127)
 	{
-		temp = (*head)->n;
-		printf("%c\n", temp);
+		printf("%c\n", (*head)->n);
 	}
-
 	else
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", line);
