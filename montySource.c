@@ -12,7 +12,6 @@ int main(int argc, char *argv[])
 	FILE *fd;
 	/*ssize_t _read;*/
 	char *buffer;
-	stack_t *head = NULL;
 
 	if (argc != 2)
 	{
