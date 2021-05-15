@@ -12,7 +12,7 @@ void _add(stack_t **head, unsigned int line)
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		printf("L%d: can't add, stack too short\n", line);
+		fprintf(stderr, "L%d: can't add, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
 
@@ -37,7 +37,7 @@ void _sub(stack_t **head, unsigned int line)
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		printf("L%d: can't add, stack too short\n", line);
+		fprintf(stderr, "L%d: can't add, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
 
@@ -62,7 +62,7 @@ void _div(stack_t **head, unsigned int line)
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		printf("L%d: can't add, stack too short\n", line);
+		fprintf(stderr, "L%d: can't add, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
 
@@ -71,7 +71,7 @@ void _div(stack_t **head, unsigned int line)
 
 	if (temp2->n == 0)
 	{
-		printf("L%d: division by zero\n", line);
+		fprintf(stderr, "L%d: division by zero\n", line);
 		exit(EXIT_FAILURE);
 	}
 
@@ -93,7 +93,7 @@ void _mul(stack_t **head, unsigned int line)
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		printf("L%d: can't add, stack too short\n", line);
+		fprintf(stderr, "L%d: can't add, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
 
@@ -118,7 +118,7 @@ void _mod(stack_t **head, unsigned int line)
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		printf("L%d: can't add, stack too short\n", line);
+		fprintf(stderr, "L%d: can't add, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
 
@@ -127,7 +127,7 @@ void _mod(stack_t **head, unsigned int line)
 
 	if (temp2->n == 0)
 	{
-		printf("L%d: division by zero\n", line);
+		fprintf(stderr, "L%d: division by zero\n", line);
 		exit(EXIT_FAILURE);
 	}
 
@@ -136,4 +136,3 @@ void _mod(stack_t **head, unsigned int line)
 	(*head)->prev = NULL;
 	free(temp2);
 }
-
