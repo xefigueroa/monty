@@ -32,7 +32,7 @@ int _isanum(char *token, int line)
 		}
 		else if (token[index] < '0' || token[index] > '9')
 		{
-			printf("L%d: usage: push integer\n", line);
+			fprintf(stderr, "L%d: usage: push integer\n", line);
 			exit(EXIT_FAILURE);
 		}
 	}
