@@ -37,8 +37,7 @@ void checkbuffer(FILE *fd, char *buffer)
 			else
 			{
 				freeList(head);/*maybe add free and fclose*/
-				free(buffer);
-				fprintf(stderr, "L%d: unknown instruction %s\n", line, token);
+				fprintf(stderr, L%d: unknown instruction %s, line, token);
 				exit(EXIT_FAILURE);
 			}
 		}
