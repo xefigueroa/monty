@@ -47,6 +47,8 @@ int _isanum(char *token, int line)
 
 void _pchar(stack_t **head, unsigned int line)
 {
+	int temp;
+
         if (*head == NULL || head == NULL)
         {
                 fprintf(stderr, "L%d: can't pchar, stack empty\n", line);
@@ -55,7 +57,8 @@ void _pchar(stack_t **head, unsigned int line)
 
 	if (((*head)->n) >= 0 && ((*head)->n) <= 127)
 	{
-		printf("%d\n", (*head)->n);
+		temp = (*head)->n;
+		printf("%c\n", temp);
 	}
 
 	else
