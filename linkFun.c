@@ -69,6 +69,7 @@ stack_t *addnode(stack_t **head, const int n)
 
 	if (new_node == NULL)
 	{
+		free(new_node);
 		printf("Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
@@ -82,7 +83,6 @@ stack_t *addnode(stack_t **head, const int n)
 	{
 		new_node->next->prev = new_node;
 	}
-
 	return (new_node);
 }
 

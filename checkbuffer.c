@@ -9,7 +9,7 @@
 /*void checkbuffer(FILE *fd, char *buffer, ssize_t _read)*/
 void checkbuffer(FILE *fd, char *buffer)
 {
-	char *delim = "\n\t ,.", *token = NULL;
+	char *delim = "\n\t ,.;:", *token = NULL;
 	stack_t *head = NULL;
 	int line = 1;
 	size_t getSize = 1024;
@@ -37,11 +37,12 @@ void checkbuffer(FILE *fd, char *buffer)
 			else
 			{
 				freeList(head);/*maybe add free and fclose*/
+				free(buffer);
 				printf("L%d: unknown instruction %s\n", line, token);
 				exit(EXIT_FAILURE);
 			}
-			line++;
 		}
+		line++;
 	}
-
+	freeList(head);
 }

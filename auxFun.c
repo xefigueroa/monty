@@ -33,9 +33,9 @@ void _pall(stack_t **head, unsigned int line)
 
 void _pint(stack_t **head, unsigned int line)
 {
-	if (!head)
+	if (*head == NULL || head == NULL)
 	{
-		printf("L%d: can't pint, stack empty", line);
+		printf("L%d: can't pint, stack empty\n", line);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*head)->n);
