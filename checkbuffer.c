@@ -37,7 +37,6 @@ void checkbuffer(FILE *fd, char *buffer)
 			}
 			else
 			{
-				line++;
 				freeList(head);/*maybe add free and fclose*/
 				fprintf(stderr, "L%d: unknown instruction %s\n", line, buffer);
 				exit(EXIT_FAILURE);
@@ -46,6 +45,4 @@ void checkbuffer(FILE *fd, char *buffer)
 		line++;
 	}
 	freeList(head);
-	free(buffer);
-	fclose(fd);
 }

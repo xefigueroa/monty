@@ -35,18 +35,6 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-
-	/*
-	 *_read = getline(&buffer, &getSize, fd);
-	 *if (_read == -1)
-	 *{
-	 *	free(buffer);
-	 *	fclose(fd);
-	 *	exit(EXIT_FAILURE);
-	 *}
-	 */
-
-	/*checkbuffer(fd, buffer, _read);*/
 	checkbuffer(fd, buffer);
 	freeList(head);
 	free(buffer);
