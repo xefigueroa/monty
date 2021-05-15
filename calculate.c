@@ -118,7 +118,7 @@ void _mod(stack_t **head, unsigned int line)
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't mod, stack too short", line);
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
 
