@@ -11,20 +11,9 @@ int _isanum(char *token, int line)
 {
 	int index;
 
-	/*
-	 *for (index = 0; token[index] != '\0'; index++)
-	 *{
-	 *	if (token[index] < '0' || token[index] > '9')
-	 *	{
-	 *		printf("L<%d>: usage: push integer\n", line);
-	 *		exit(EXIT_FAILURE);
-	 *	}
-	 *	}
-	 */
-
 	if (token == NULL)
 	{
-		printf("L%d: usage: push integer\n", line);
+		fprintf(stderr, "L%d: usage: push integer\n", line);
 		exit(EXIT_FAILURE);
 	}
 
