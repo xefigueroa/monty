@@ -23,20 +23,16 @@ int main(int argc, char *argv[])
 	fd = fopen(argv[1], "r");
 	if (fd == NULL)
 	{
-		fclose(fd);
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	buffer = malloc(sizeof(char) * 1024);
 	if (buffer == NULL)
 	{
-		fclose(fd);
-		free(buffer);
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	checkbuffer(fd, buffer);
-	freeList(head);
 	free(buffer);
 	fclose(fd);
 	return (0);
