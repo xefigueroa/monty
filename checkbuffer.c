@@ -22,27 +22,30 @@ void checkbuffer(FILE *fd, char *buffer)
 			line++;
 			continue;
 		}
-		if (strcmp(token, "push") == 0)
+		if (token[0] != '#')
 		{
-			token = strtok(NULL, delim);
-			_isanum(token, line);
-			addnode(&head, atoi(token));
-			/*addEndNode(&head, atoi(token));*/
-		}
-		else
-		{
-			if (opfunc(token) != 0)
+			if (strcmp(token, "push") == 0)
 			{
-				opfunc(token)(&head, line);
+				token = strtok(NULL, delim);
+				_isanum(token, line);
+				addnode(&head, atoi(token));
+				/*addEndNode(&head, atoi(token));*/
 			}
 			else
 			{
-				freeList(head);/*maybe add free and fclose*/
-				fprintf(stderr, "L%d: unknown instruction %s\n", line, buffer);
-				exit(EXIT_FAILURE);
+				if (opfunc(token) != 0)
+				{
+					opfunc(token)(&head, line);
+				}
+				else
+				{
+					freeList(head);/*maybe add free and fclose*/
+					fprintf(stderr, "L%d: unknown instruction %s\n", line, buffer);
+					exit(EXIT_FAILURE);
+				}
 			}
+			line++;
 		}
-		line++;
 	}
 	freeList(head);
 }
