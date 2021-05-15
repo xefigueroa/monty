@@ -10,7 +10,6 @@
 int _isanum(char *token, int line)
 {
 	int index;
-	(void)line;
 
 	/*
 	 *for (index = 0; token[index] != '\0'; index++)

@@ -70,7 +70,7 @@ stack_t *addnode(stack_t **head, const int n)
 	if (new_node == NULL)
 	{
 		free(new_node);
-		printf("Error: malloc failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 

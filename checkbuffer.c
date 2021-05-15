@@ -19,6 +19,7 @@ void checkbuffer(FILE *fd, char *buffer)
 		token = strtok(buffer, delim);
 		if (token == NULL)
 		{
+			line++;
 			continue;
 		}
 		if (strcmp(token, "push") == 0)
@@ -36,6 +37,7 @@ void checkbuffer(FILE *fd, char *buffer)
 			}
 			else
 			{
+				line++;
 				freeList(head);/*maybe add free and fclose*/
 				fprintf(stderr, "L%d: unknown instruction %s\n", line, buffer);
 				exit(EXIT_FAILURE);
@@ -44,4 +46,6 @@ void checkbuffer(FILE *fd, char *buffer)
 		line++;
 	}
 	freeList(head);
+	free(buffer);
+	fclose(fd);
 }
