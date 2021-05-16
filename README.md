@@ -57,11 +57,11 @@ The goal of this project is to create an interpreter for Monty ByteCodes files.
 | README.md | Provides details regarding functionality and creation of a monty bytecode interpreter (present file) |
 | monty.h | Header file containing libraries, prototypes and structures pertaining monty interpreter. |
 | montySource.c | Main file that runs the monty interpreter program.  |
-| checkbuffer.c | Verifies the validity of the buffer |
+| checkbuffer.c |  |
 | linkFun.c |  |
-| getopfun.c | File containing struct to determine opcode function to use. |
-| auxFun.c | Auxiliary functions |
-| moreAuxFun.c | More auxiliary functions |
+| getopfun.c | |
+| auxFun.c | |
+| moreAuxFun.c |  |
 | calculate.c | File containing the add, sub, div, mul and mod opcode functions. |
 | text.m | Test file used to verify test cases. |
 | AUTHORS | File containing AUTHORS information. |
@@ -107,7 +107,7 @@ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
   * The result is stored in the second element from the top and the top element is removed.
 
 * **mul**
-  * Multiplies the top two elements of the stack/queue.
+  * Multiplies the top two eleents of the stack/queue.
   * The result is stored in the second element from the top and the top element is removed.
 
 * **div**
@@ -130,3 +130,4 @@ All files have been verified with Betty Style format.
 ## Authors
 * **Kevin Ramos Lozano** | https://github.com/xefigueroa | 2361@holbertonschool.com
 * **Xavier Figueroa Muniz** | https://github.com/KevinTMO | 2377@holbertonschool.com
+m
