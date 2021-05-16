@@ -73,10 +73,11 @@ void _pchar(stack_t **head, unsigned int line)
 void _pstr(stack_t **head, unsigned int line)
 {
 	stack_t *temp = NULL;
+	(void)line;
 
 	if (*head == NULL || head == NULL)
 	{
-		fprintf(stderr, "L%d: Can't pstr, empty stack\n", line);
+		printf("\n");
 		exit(EXIT_FAILURE);
 	}
 
