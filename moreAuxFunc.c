@@ -62,3 +62,30 @@ void _pchar(stack_t **head, unsigned int line)
 		exit(EXIT_FAILURE);
 	}
 }
+
+/**
+ *_pstr - will print a string using ascii value
+ *@head: is the pointer to the first node
+ *@line: is the number of the line
+ *Return: will return nothing (void)
+ */
+
+void _pstr(stack_t **head, unsigned int line)
+{
+	stack_t *temp = NULL;
+
+	if (*head == NULL || head == NULL)
+	{
+		fprintf(stderr, "L%d: Can't pstr, empty stack\n", line);
+		exit(EXIT_FAILURE);
+	}
+
+	temp = *head;
+
+	while ((temp != NULL) && (temp->n != 0) &&
+	    (temp->n >= 0) && (temp->n <= 127))
+	{
+		printf("%c\n", (temp)->n);
+		temp = temp->next;
+	}
+}
