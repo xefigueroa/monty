@@ -57,11 +57,11 @@ The goal of this project is to create an interpreter for Monty ByteCodes files.
 | README.md | Provides details regarding functionality and creation of a monty bytecode interpreter (present file) |
 | monty.h | Header file containing libraries, prototypes and structures pertaining monty interpreter. |
 | montySource.c | Main file that runs the monty interpreter program.  |
-| checkbuffer.c |  |
+| checkbuffer.c | Verifies the validity of the buffer |
 | linkFun.c |  |
-| getopfun.c | |
-| auxFun.c | |
-| moreAuxFun.c |  |
+| getopfun.c | File containing struct to determine opcode function to use. |
+| auxFun.c | Auxiliary functions |
+| moreAuxFun.c | More auxiliary functions |
 | calculate.c | File containing the add, sub, div, mul and mod opcode functions. |
 | text.m | Test file used to verify test cases. |
 | AUTHORS | File containing AUTHORS information. |
