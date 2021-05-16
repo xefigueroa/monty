@@ -78,7 +78,7 @@ void _pstr(stack_t **head, unsigned int line)
 	if (*head == NULL || head == NULL)
 	{
 		printf("\n");
-		exit(EXIT_FAILURE);
+		return;
 	}
 
 	temp = *head;
